@@ -1,0 +1,40 @@
+{
+
+  "manifest_version": 2,
+  "name": "Speech Timer",
+  "version": "1.0.1",
+
+  "description": "",
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "Speech Timer"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "speech-timer@bravikov.pro",
+      "strict_min_version": "45.0"
+    }
+  },
+
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["speech-timer.js"]
+    }
+  ]
+
+}
